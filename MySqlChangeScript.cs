@@ -15,7 +15,7 @@ namespace Inedo.BuildMasterExtensions.MySql
         /// </summary>
         /// <param name="dr">The data row.</param>
         public MySqlChangeScript(DataRow dr)
-            : base((long)dr["Numeric_Release_Number"], (int)dr["Script_Id"], (string)dr["Script_Name"], (DateTime)dr["Executed_Date"], dr["Success_Indicator"].ToString() == "Y")
+            : base((long)dr["Numeric_Release_Number"], (int)dr["Script_Id"], (string)dr["Script_Name"], ((DateTime)dr["Executed_Date"]).ToUniversalTime(), dr["Success_Indicator"].ToString() == "Y")
         {
         }
     }

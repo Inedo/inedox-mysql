@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Inedo.BuildMasterExtensions.MySql
 {
-    [ProviderProperties("MySQL", "Supports MySQL 4.0 and later.")]
+    [ProviderProperties("MySQL", "Supports MySQL 4.0 and later.", RequiresTransparentProxy = true)]
     [CustomEditor(typeof(MySqlDatabaseProviderEditor))]
     public sealed class MySqlDatabaseProvider : DatabaseProviderBase, IChangeScriptProvider
     {
