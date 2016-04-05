@@ -1,25 +1,20 @@
-﻿using Inedo.BuildMaster.Extensibility.Providers;
-using Inedo.BuildMaster.Web.Controls;
+﻿using Inedo.BuildMaster.Extensibility.DatabaseConnections;
 using Inedo.BuildMaster.Web.Controls.Extensions;
 using Inedo.Web.Controls;
 
 namespace Inedo.BuildMasterExtensions.MySql
 {
-    internal sealed class MySqlDatabaseProviderEditor : ProviderEditorBase
+    internal sealed class MySqlDatabaseProviderEditor : DatabaseConnectionEditorBase
     {
         private ValidatingTextBox txtConnectionString;
 
-        public override void BindToForm(ProviderBase extension)
+        public override void BindToForm(DatabaseConnection extension)
         {
-            this.EnsureChildControls();
-
             var mysql = (MySqlDatabaseProvider)extension;
             this.txtConnectionString.Text = mysql.ConnectionString;
         }
-        public override ProviderBase CreateFromForm()
+        public override DatabaseConnection CreateFromForm()
         {
-            this.EnsureChildControls();
-
             return new MySqlDatabaseProvider
             {
                 ConnectionString = this.txtConnectionString.Text
@@ -28,23 +23,15 @@ namespace Inedo.BuildMasterExtensions.MySql
 
         protected override void CreateChildControls()
         {
-            this.txtConnectionString = new ValidatingTextBox
-            {
-                Width = 300,
-                Required = true
-            };
+            this.txtConnectionString = new ValidatingTextBox { Required = true };
 
             this.Controls.Add(
-                new FormFieldGroup(
-                    "Connection String",
-                    "The connection string to the MySql database. The standard format for this is:<br /><br />"
-                    + "<em>Server=myServerAddress; Database=myDataBase; Uid=myUsername; Pwd=myPassword;</em>",
-                    false,
-                    new StandardFormField(string.Empty, this.txtConnectionString)
-                )
+                new SlimFormField("Connection string:", this.txtConnectionString)
+                {
+                    HelpText = "The connection string to the MySql database. The standard format for this is:<br /><br />"
+                        + "<em>Server=myServerAddress; Database=myDataBase; Uid=myUsername; Pwd=myPassword;</em>"
+                }
             );
-
-            base.CreateChildControls();
         }
     }
 }
