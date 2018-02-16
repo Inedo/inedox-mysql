@@ -10,6 +10,7 @@ using Inedo.BuildMaster.Web;
 using Inedo.BuildMasterExtensions.MySql.Properties;
 using Inedo.Data;
 using Inedo.Diagnostics;
+using Inedo.Web;
 using MySql.Data.MySqlClient;
 
 namespace Inedo.BuildMasterExtensions.MySql
