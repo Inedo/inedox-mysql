@@ -1,6 +1,6 @@
 # inedox-mysql
 
-[![Build status](https://ci.appveyor.com/api/projects/status/kuuebmh17vqjv7sk/branch/master?svg=true)](https://ci.appveyor.com/project/Inedo/inedox-mysql/branch/master)
+[![Build status](https://buildmaster.inedo.com/api/ci-badges/image?API_Key=badges&$ApplicationId=29)](https://buildmaster.inedo.com/api/ci-badges/link?API_Key=badges&$ApplicationId=29)
 
 Database integration for MySQL 4.0 and later.
 
