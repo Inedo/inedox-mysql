@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Inedo.Extensibility;
+
+[assembly: AppliesTo(InedoProduct.BuildMaster)]
 
 [assembly: AssemblyTitle("MySQL")]
 [assembly: AssemblyDescription("Database integration for MySQL 4.0 and later.")]
