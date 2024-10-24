@@ -3,7 +3,7 @@
     <AssemblyName>MySql</AssemblyName>
     <RootNamespace>Inedo.Extensions.MySQL</RootNamespace>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -11,7 +11,7 @@
     <EmbeddedResource Include="Resources\Initialize.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Inedo.SDK" Version="2.0.0-ci.18" ExcludeAssets="runtime" />
-    <PackageReference Include="MySql.Data" Version="8.0.29" />
+    <PackageReference Include="Inedo.SDK" Version="3.1.0" ExcludeAssets="runtime" />
+    <PackageReference Include="MySql.Data" Version="9.1.0" />
   </ItemGroup>
 </Project>
